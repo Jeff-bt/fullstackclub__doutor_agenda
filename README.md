@@ -1,6 +1,6 @@
-# Doutor Agenda
+# Doutor Agenda 🏥
 
-Doutor Agenda é uma aplicação moderna para gerenciamento de consultas médicas, desenvolvida com as mais recentes tecnologias web.
+Um sistema moderno de agendamento médico desenvolvido com as mais recentes tecnologias web. O Doutor Agenda oferece uma interface intuitiva para gerenciamento de consultas, pacientes e profissionais de saúde.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -10,7 +10,7 @@ Doutor Agenda é uma aplicação moderna para gerenciamento de consultas médica
   - React 19
   - TypeScript
   - Tailwind CSS
-  - Radix UI (Componentes acessíveis)
+  - Shadcn (Componentes acessíveis)
   - React Query (Gerenciamento de estado e cache)
   - React Hook Form (Formulários)
   - Zod (Validação de dados)
@@ -20,6 +20,7 @@ Doutor Agenda é uma aplicação moderna para gerenciamento de consultas médica
   - Next.js API Routes
   - Drizzle ORM
   - PostgreSQL
+  - Better-auth (authenticação)
   - Stripe (Pagamentos)
 
 - **Ferramentas de Desenvolvimento:**
@@ -52,10 +53,8 @@ npm install
 3. Configure as variáveis de ambiente:
    Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
-```env
-DATABASE_URL=sua_url_do_postgres
-STRIPE_SECRET_KEY=sua_chave_secreta_do_stripe
-STRIPE_PUBLISHABLE_KEY=sua_chave_publica_do_stripe
+```bash
+cp .env.example .env.local
 ```
 
 4. Execute as migrações do banco de dados:
