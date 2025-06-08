@@ -2,6 +2,9 @@
 
 Um sistema moderno de agendamento médico desenvolvido com as mais recentes tecnologias web. O Doutor Agenda oferece uma interface intuitiva para gerenciamento de consultas, pacientes e profissionais de saúde.
 
+![image](https://github.com/user-attachments/assets/9232d9be-52c7-40dc-99d8-568ec14f82ec)
+
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Frontend:**
