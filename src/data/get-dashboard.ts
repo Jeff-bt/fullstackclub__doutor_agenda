@@ -137,7 +137,6 @@ export const getDashboard = async ({ from, to, session }: Params) => {
       .orderBy(sql`DATE(${appointmentsTable.date})`),
   ]);
 
-  console.log();
   return {
     totalRevenue,
     totalAppointments,
