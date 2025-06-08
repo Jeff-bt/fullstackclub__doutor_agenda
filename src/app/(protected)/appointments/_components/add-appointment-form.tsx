@@ -91,6 +91,8 @@ const AddAppointmentForm = ({
     },
   });
 
+  const chartStartDateToday = dayjs().startOf("day").toDate();
+
   const selectedDoctorId = form.watch("doctorId");
   const selectedPatientId = form.watch("patientId");
   const selectedDate = form.watch("date");
@@ -287,7 +289,7 @@ const AddAppointmentForm = ({
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) =>
-                        date <= new Date() || !isDateAvailable(date)
+                        date < chartStartDateToday || !isDateAvailable(date)
                       }
                       initialFocus
                     />
