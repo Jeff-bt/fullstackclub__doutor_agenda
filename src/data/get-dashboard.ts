@@ -19,6 +19,9 @@ interface Params {
 export const getDashboard = async ({ from, to, session }: Params) => {
   const chartStartDate = dayjs().subtract(10, "days").startOf("day").toDate();
   const chartEndDate = dayjs().add(10, "days").endOf("day").toDate();
+
+  const chartStartDateToday = dayjs().startOf("day").toDate(); // Hoje às 00:00:00
+  const chartEndDateToday = dayjs().endOf("day").toDate();
   const [
     [totalRevenue],
     [totalAppointments],
@@ -105,8 +108,8 @@ export const getDashboard = async ({ from, to, session }: Params) => {
     db.query.appointmentsTable.findMany({
       where: and(
         eq(appointmentsTable.clinicId, session.user.clinic.id),
-        gte(appointmentsTable.date, new Date()),
-        lte(appointmentsTable.date, new Date()),
+        gte(appointmentsTable.date, chartStartDateToday),
+        lte(appointmentsTable.date, chartEndDateToday),
       ),
       with: {
         patients: true,
@@ -133,6 +136,8 @@ export const getDashboard = async ({ from, to, session }: Params) => {
       .groupBy(sql`DATE(${appointmentsTable.date})`)
       .orderBy(sql`DATE(${appointmentsTable.date})`),
   ]);
+
+  console.log();
   return {
     totalRevenue,
     totalAppointments,

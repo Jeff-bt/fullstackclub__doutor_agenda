@@ -287,7 +287,7 @@ const AddAppointmentForm = ({
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) =>
-                        date < new Date() || !isDateAvailable(date)
+                        date <= new Date() || !isDateAvailable(date)
                       }
                       initialFocus
                     />

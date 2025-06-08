@@ -68,6 +68,8 @@ const DashboardPage = async ({ searchParams }: DashboardPageProps) => {
     },
   });
 
+  console.log(totalAppointments);
+
   return (
     <PageContainer>
       <PageHeader>
